@@ -188,8 +188,8 @@
             // Если значение — строка/число, это конечный элемент (leaf)
             const span = document.createElement("span");
             span.className = "leaf";
-            // Если ключ — просто индекс или технический, выводим только значение
-            span.textContent = isNaN(key) ? `${key}: ${value}` : value;
+
+            span.textContent = `${key}: ${value}`;
 
             li.appendChild(span);
           }
