@@ -644,7 +644,7 @@
               },
             },
             "Язык SQL": {
-              Модификации: {
+              "Модификации (DML)": {
                 INSERT: {
                   "1)": "INSERT INTO Goods (good_name, type) VALUES ('Butter', 1),('Bread', 3);",
                   "2)": "INSERT INTO Goods (good_id, good_name, type) SELECT COUNT(*), 'Cheese', 2 FROM Goods;",
@@ -656,7 +656,7 @@
               },
               "Выборки и фильтрация": {
                 "SELECT, DISTINCT": {},
-                "Фильтрация данны": {
+                "Фильтрация данных": {
                   WHERE: {},
                   "=, <>, >, <": {},
                   "IN, BETWEEN": {},
@@ -672,26 +672,37 @@
                   "IS NOT NULL": {},
                 },
               },
-              "Объединение таблиц": {
+              "Объединение таблиц (JOINs)": {
                 "INNER JOIN": {},
                 "LEFT JOIN": {},
                 "RIGHT JOIN": {},
                 "FULL OUTER JOIN": {},
               },
-              "Оконные функции": {
-                "Агрегатные функции и группировка": {
-                  COUNT: {
-                    1: "COUNT(field)",
-                    2: "COUNT(*)",
-                  },
+              "Скалярные функции": {
+                "ROUND()": {},
+                "CONCAT()": {},
+                "COALESCE()": {},
+              },
+              "Агрегация и группировка": {
+                "Операторы группировки": {
+                  "GROUP BY": {},
+                  HAVING: {},
+                },
+                "Базовые агрегатные функции": {
+                  COUNT: { 1: "COUNT(field)", 2: "COUNT(*)" },
                   SUM: {},
                   AVG: {},
                   MIN: {},
                   MAX: {},
+                },
+                "Продвинутая агрегация": {
                   "GROUP_CONCAT() в MySQL": {},
                   "STRING_AGG() в PostgreSQL": {},
                   "STDDEV() / VARIANCE()": {},
                 },
+              },
+              "Оконные функции (Window Functions)": {
+                "Использование агрегатных функций с OVER()": {},
                 "Функции ранжирования (Порядковые)": {
                   ROW_NUMBER: "",
                   RANK: {},
@@ -711,10 +722,9 @@
                   "PERCENTILE_DISC(p)": {},
                 },
               },
-
               Транзакции: {
-                BEGIN: {},
-                COMEBACK: {},
+                "BEGIN / START TRANSACTION": {},
+                COMMIT: {},
                 ROLLBACK: {},
               },
               "Подзапросы и функции обработки данных": {
@@ -722,8 +732,10 @@
                   WITH: "Базовый синтаксис: WITH cte_name AS (SELECT ...)",
                   "WITH RECURSIVE": "Рекурсивные запросы для иерархий",
                 },
-                "(SELCT)": {},
-                "WHERE NOT EXIST ()": {},
+                "Подзапросы в SELECT (Scalar subqueries)": {},
+                "Подзапросы в WHERE (IN, EXISTS)": {
+                  "WHERE NOT EXISTS ()": {},
+                },
               },
             },
           },
