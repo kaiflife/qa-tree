@@ -608,12 +608,12 @@
         },
       },
       "Работа с окружением": {
-        "1): Databases (SQL/NoSQL)": {
-          "1)": "Первичные ключи (Primary Keys - PK)",
-          "2)": "Внешние ключи (Foreign Keys - FK)",
-          "3)": "Индекс",
-          "4): Реляционные базы данных (РБД)": {
-            "1): Преимущество": {
+        "Databases (SQL/NoSQL)": {
+          "Первичные ключи (Primary Keys - PK)": {},
+          "Внешние ключи (Foreign Keys - FK)": {},
+          Индекс: {},
+          "Реляционные базы данных (РБД)": {
+            Преимущество: {
               1: "Структурированное хранение данных",
               2: "Целостность данных",
               3: "Снижение избыточности данных (нормализация)",
@@ -621,7 +621,7 @@
               5: "ACID-совместимость",
               6: "Масштабируемость",
             },
-            "2): Типы связей": {
+            "Типы связей": {
               1: "Один-ко-многим (One-to-many - 1:N)",
               2: "Один-к-одному (One-to-one - 1:1)",
               3: "Многие-ко-многим (Many-to-many - N:M)",
@@ -630,18 +630,94 @@
               6: "Несколько связей между двумя таблицами",
               7: "Несвязанные таблицы",
             },
-            "3): ER-диаграмма (Entity-Relationship Diagram)": {
+            "ER-диаграмма (Entity-Relationship Diagram)": {
               "Основные компоненты ER-диаграммы": {
                 1: "Сущности (Entities)",
                 2: "Атрибуты (Attributes)",
                 3: "Связи (Relationships)",
               },
             },
+            "Язык SQL": {
+              Модификации: {
+                INSERT: {
+                  "1)": "INSERT INTO Goods (good_name, type) VALUES ('Butter', 1),('Bread', 3);",
+                  "2)": "INSERT INTO Goods (good_id, good_name, type) SELECT COUNT(*), 'Cheese', 2 FROM Goods;",
+                  "3): ON CONFLICT": {},
+                  "4): ON DUPLICATE KEY UPDATE": {},
+                },
+                UPDATE: {},
+                DELETE: {},
+              },
+              "Выборки и фильтрация": {
+                "SELECT, DISTINCT": {},
+                "Фильтрация данны": {
+                  WHERE: {},
+                  "=, <>, >, <": {},
+                  "IN, BETWEEN": {},
+                },
+                "Работа с текстом LIKE, ILIKE": {},
+                "Сортировка и ограничение": {
+                  "ORDER BY (ASC/DESC)": {},
+                  "LIMIT / OFFSET": {},
+                },
+                "Обработка пустот": {
+                  NULL: {},
+                  "IS NULL": {},
+                  "IS NOT NULL": {},
+                },
+              },
+              "Объединение таблиц": {
+                "INNER JOIN": {},
+                "LEFT JOIN": {},
+                "RIGHT JOIN": {},
+                "FULL OUTER JOIN": {},
+              },
+              "Оконные функции": {
+                "Агрегатные функции и группировка": {
+                  COUNT: {
+                    1: "COUNT(field)",
+                    2: "COUNT(*)",
+                  },
+                  SUM: {},
+                  AVG: {},
+                  MIN: {},
+                  MAX: {},
+                },
+                "Функции ранжирования (Порядковые)": {
+                  ROW_NUMBER: "",
+                  RANK: {},
+                  DENSE_RANK: {},
+                  "NTILE(N)": {},
+                },
+                "Функции смещения": {
+                  "LAG(column, offset)": {},
+                  "LEAD(column, offset)": {},
+                  "FIRST_VALUE(column)": {},
+                  "LAST_VALUE(column)": {},
+                },
+                Аналитические: {
+                  "CUME_DIST() (Cumulative Distribution)": {},
+                  "PERCENT_RANK()": {},
+                  "PERCENTILE_CONT(p)": {},
+                  "PERCENTILE_DISC(p)": {},
+                },
+              },
+
+              Транзакции: {
+                BEGIN: {},
+                COMEBACK: {},
+                ROLLBACK: {},
+              },
+              "Подзапросы и функции обработки данных": {
+                "(SELCT)": {},
+                "WHERE NOT EXIST ()": {},
+              },
+            },
           },
-          "5)": "Нереляционные базы данных (NoSQL)",
+          "Нереляционные базы данных (NoSQL)": {},
         },
-        "2)": "Client-Server Architecture",
-        "3)": "API (HTTP/HTTPS, REST/SOAP)",
+        "Client-Server Architecture": {},
+        "API (HTTP/HTTPS, REST/SOAP)": {},
       },
       "Soft Skills": {
         1: "Time Management",
@@ -661,13 +737,13 @@
           3: "ACK (Подтверждение)",
         },
         "HTTP/HTTPS": {
-          "1)": "TLS/SSL Handshake",
-          "2 HTTP-запрос": {
+          "TLS/SSL Handshake": {},
+          "HTTP-запрос": {
             1: "Стартовая строка",
             2: "Заголовки (Headers)",
             3: "Тело запроса (Body)",
           },
-          "3)": "HTTP-ответ",
+          "HTTP-ответ": {},
           "Коды ответа": {
             "2xx": {
               200: "OK",
