@@ -651,8 +651,12 @@
                   "3): ON CONFLICT": {},
                   "4): ON DUPLICATE KEY UPDATE": {},
                 },
-                UPDATE: {},
-                DELETE: {},
+                UPDATE: {
+                  1: "UPDATE FamilyMembers SET member_name = 'Andie Anthony WHERE member_name = 'Andie Quincey'",
+                },
+                DELETE: {
+                  1: "DELETE FROM FamilyMembers WHERE member_name LIKE '%Quincey';",
+                },
               },
               "Выборки и фильтрация": {
                 "SELECT, DISTINCT": {},
