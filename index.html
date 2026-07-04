@@ -1012,6 +1012,33 @@
           "ACK (Подтверждение)": {},
         },
         "HTTP/HTTPS": {
+          "Эволюция и разница протоколов": {
+            "HTTP/1.1": {
+              "Текстовый формат передачи данных": {},
+              "Последовательная обработка запросов (Keep-Alive)": {},
+              "Проблема HOL Blocking (Head-of-Line) на уровне приложения": {},
+              "Ограничение на количество параллельных TCP-соединений (до 6)":
+                {},
+            },
+            "HTTP/2": {
+              "Бинарный формат передачи (Фреймы и потоки)": {},
+              "Мультиплексирование (Параллельные запросы в одном TCP-соединении)":
+                {},
+              "Сжатие заголовков (Алгоритм HPACK)": {},
+              "Server Push (Отправка ресурсов сервером до явного запроса)": {},
+              "Проблема HOL Blocking на транспортном уровне (TCP)": {},
+            },
+            "HTTP/3": {
+              "Переход с TCP на протокол QUIC (на базе UDP)": {},
+              "Полное устранение HOL Blocking (Потери пакетов изолированы в потоках)":
+                {},
+              "Быстрое установление соединения (1-RTT или 0-RTT в отличие от TCP+TLS)":
+                {},
+              "Сжатие заголовков (Алгоритм QPACK)": {},
+              "Миграция соединения (Сохранение сессии при смене IP-адреса/Wi-Fi)":
+                {},
+            },
+          },
           "TLS/SSL Handshake": {
             "Client Hello (Версия TLS, Cipher Suites, Random Bytes)": {},
             "Server Hello (Выбранный Cipher Suite, Сертификат сервера, Random Bytes)":
@@ -1078,10 +1105,53 @@
             },
           },
           "Безопасность (Security Headers)": {
-            "CORS (Cross-Origin Resource Sharing)": {},
-            "CSP (Content Security Policy)": {},
-            "HSTS (HTTP Strict Transport Security)": {},
-            "X-Content-Type-Options": {},
+            "CORS (Cross-Origin Resource Sharing)": {
+              "Access-Control-Allow-Origin": {},
+              "Access-Control-Allow-Methods": {},
+              "Access-Control-Allow-Headers": {},
+              "Access-Control-Allow-Credentials": {},
+              "Access-Control-Max-Age": {},
+              "Preflight-запрос (OPTIONS)": {},
+            },
+            "CSP (Content Security Policy)": {
+              "default-src": {},
+              "script-src": {},
+              "style-src": {},
+              "img-src": {},
+              "connect-src": {},
+              "frame-ancestors": {},
+              "report-uri / report-to": {},
+            },
+            "HSTS (HTTP Strict Transport Security)": {
+              "max-age": {},
+              includeSubDomains: {},
+              preload: {},
+            },
+            "X-Content-Type-Options": {
+              nosniff: {},
+            },
+          },
+          "Уязвимости веб-безопасности": {
+            "XSS (Cross-Site Scripting)": {
+              "Stored (Хранимая XSS - скрипт сохраняется в БД)": {},
+              "Reflected (Отраженная XSS - скрипт передается в параметрах запроса)":
+                {},
+              "DOM-based (XSS в DOM-дереве на стороне клиента)": {},
+              "Методы защиты (Санитизация ввода, экранирование, CSP, HttpOnly)":
+                {},
+            },
+            "CSRF (Cross-Site Request Forgery)": {
+              "Механизм атаки (Использование чужой сессии через куки пользователя)":
+                {},
+              "Методы защиты (Anti-CSRF токены, SameSite-атрибут для Cookie)":
+                {},
+            },
+            "Clickjacking (Внедрение кликов)": {
+              "Механизм атаки (Перекрытие легитимного сайта прозрачным iframe)":
+                {},
+              "Методы защиты (Заголовок X-Frame-Options, директива CSP frame-ancestors)":
+                {},
+            },
           },
         },
         "Хранилища данных (Browser Storage)": {
