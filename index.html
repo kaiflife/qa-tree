@@ -1012,13 +1012,24 @@
           3: "ACK (Подтверждение)",
         },
         "HTTP/HTTPS": {
-          "TLS/SSL Handshake": {},
+          "TLS/SSL Handshake": {
+            1: "Client Hello (Версия TLS, Cipher Suites, Random Bytes)",
+            2: "Server Hello (Выбранный Cipher Suite, Сертификат сервера, Random Bytes)",
+            3: "Проверка сертификата (Цепочка доверия CA, Срок действия, CRL/OCSP)",
+            4: "Обмен ключами (Генерация Pre-Master Secret через RSA или Diffie-Hellman)",
+            5: "Генерация сессионных ключей (Симметричное шифрование)",
+            6: "Finished (Проверка целостности и переход на зашифрованное соединение)",
+          },
           "HTTP-запрос": {
             1: "Стартовая строка",
             2: "Заголовки (Headers)",
             3: "Тело запроса (Body)",
           },
-          "HTTP-ответ": {},
+          "HTTP-ответ": {
+            1: "Стартовая строка (Версия, Код состояния)",
+            2: "Заголовки (Headers)",
+            3: "Тело ответа (Body - HTML, JSON, Картинка)",
+          },
           "Коды ответа": {
             "2xx": {
               200: "OK",
@@ -1062,8 +1073,28 @@
               6: "Expires / Max-Age",
             },
           },
+          "Безопасность (Security Headers)": {
+            1: "CORS (Cross-Origin Resource Sharing)",
+            2: "CSP (Content Security Policy)",
+            3: "HSTS (HTTP Strict Transport Security)",
+            4: "X-Content-Type-Options",
+          },
         },
-        "Отрисовка/Render": {},
+        "Хранилища данных (Browser Storage)": {
+          1: "LocalStorage (Бессрочное хранение, до 5-10 МБ)",
+          2: "SessionStorage (В рамках вкладки, до 5 МБ)",
+          3: "IndexedDB (Структурированная база данных, NoSQL)",
+          4: "Cache API (Кэширование сетевых запросов для Service Workers)",
+        },
+        "Отрисовка/Render": {
+          1: "Парсинг HTML и построение DOM-дерева (Document Object Model)",
+          2: "Парсинг CSS и построение CSSOM-дерева (CSS Object Model)",
+          3: "Выполнение JavaScript (Блокировка парсинга, async/defer скрипты)",
+          4: "Создание дерева рендеринга (Render Tree = DOM + CSSOM)",
+          5: "Расчет макета (Layout / Reflow - определение геометрии элементов)",
+          6: "Отрисовка (Paint - заполнение пикселей, текстуры, цвета)",
+          7: "Композиция слоев (Composite - сборка слоев на GPU)",
+        },
       },
     });
   </script>
