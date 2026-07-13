@@ -1,0 +1,145 @@
+:root {
+  --bg-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --accent-color: #89b4fa;
+  --folder-color: #f9e2af;
+  --line-color: #45475a;
+  --hover-bg: #313244;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--line-color);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Стилизация дерева с использованием CSS Nesting */
+.tree {
+  max-width: 780px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+
+  /* Все вложенные списки (ul) */
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 24px;
+    position: relative;
+
+    /* Вертикальные линии соединения */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -12px;
+      border-left: 1px dashed var(--line-color);
+      height: 100%;
+    }
+  }
+
+  /* Элементы списка (li) */
+  & li {
+    margin: 0;
+    padding: 6px 0;
+    position: relative;
+    font-size: 15px;
+
+    /* Горизонтальные линии к элементам */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: -12px;
+      border-top: 1px dashed var(--line-color);
+      width: 12px;
+    }
+
+    /* Последний элемент ветки обрезает линию */
+    &:last-child {
+      &::before {
+        background: var(--bg-color);
+        height: auto;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: -13px;
+        bottom: 0;
+        border-left: 1px solid var(--bg-color);
+        width: 1px;
+      }
+    }
+  }
+
+  /* Интерактивный тег details и summary */
+  & details {
+    display: block;
+
+    & summary {
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      font-weight: 600;
+      color: var(--accent-color);
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none; /* Убираем стрелку в Firefox */
+
+      &:hover {
+        background-color: var(--hover-bg);
+      }
+
+      /* Убираем стандартную стрелку в Chrome/Safari */
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Кастомный маркер состояния */
+      &::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 10px;
+        transition: transform 0.2s;
+        color: var(--folder-color);
+        width: 12.48px;
+        padding-left: 4px;
+      }
+    }
+
+    /* Поворот стрелки при открытии */
+    &[open] > summary::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Стили для конечных листьев (лексем) */
+  & .leaf {
+    padding: 4px 8px;
+    color: var(--text-color);
+    display: inline-block;
+
+    &::before {
+      content: "📄";
+      margin-right: 8px;
+      font-size: 12px;
+    }
+  }
+}
